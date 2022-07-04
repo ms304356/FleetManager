@@ -5,11 +5,11 @@
 #define FLEETMANAGER_INTERFACE_H
 #include <string>
 
-static std::string drawList(std::vector<std::vector<std::string>> list);
+void drawList(std::vector<std::vector<std::string>> list);
 
-static std::string mainMenu();
+void mainMenu(std::string saveFile);
 
-
+void chosenOption(std::string option, std::string saveFile);
 
 
 #endif //FLEETMANAGER_INTERFACE_H

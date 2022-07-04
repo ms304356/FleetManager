@@ -5,7 +5,7 @@
 
 #ifndef FLEETMANAGER_CAR_H
 #define FLEETMANAGER_CAR_H
-#pragma once
+
 #include <string>
 #include <vector>
 #include "Driver.h"

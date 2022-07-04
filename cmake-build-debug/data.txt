@@ -1,0 +1,5 @@
+Taxi|extra|FY123456AK|B|Mercedes|Benz|Red|02251512370|John|Posser|B
+Van|9|FY123456AK|B|Mercedes|Benz|Red|02251512370|John|Posser|B
+Limo|9.100000|FY123456AK|B|Mercedes|Benz|Red|02251512370|John|Posser|B
+SDTaxi|quick|FY123456AK|None|Mercedes|Benz|Red|no_driver
+SDTaxi|quick|FL1235DF|None|Toyota|Corolla|Green|no_driver

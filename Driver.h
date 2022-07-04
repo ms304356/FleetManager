@@ -5,7 +5,7 @@
 #ifndef FLEETMANAGER_DRIVER_H
 #define FLEETMANAGER_DRIVER_H
 
-#pragma once
+
 #include <string>
 #include <vector>
 #include "Person.h"
@@ -15,7 +15,7 @@ namespace ms {
     class Driver : public ms::Person {
         std::string licenseType;
     public:
-        Driver(const std::string &firstName, const std::string &lastName, const std::shared_ptr<ms::Pesel> &pesel, const std::string& licenseType) :
+        Driver(const std::string &firstName, const std::string &lastName, const std::string &pesel, const std::string& licenseType) :
             Person(firstName, lastName, pesel), licenseType(licenseType){
 
         }

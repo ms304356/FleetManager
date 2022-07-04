@@ -5,7 +5,6 @@
 #ifndef FLEETMANAGER_LIMO_H
 #define FLEETMANAGER_LIMO_H
 
-#pragma once
 #include "Car.h"
 
 

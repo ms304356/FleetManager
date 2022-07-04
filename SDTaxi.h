@@ -5,7 +5,7 @@
 #ifndef FLEETMANAGER_SDTAXI_H
 #define FLEETMANAGER_SDTAXI_H
 
-#pragma once
+
 #include "Car.h"
 
 
@@ -21,6 +21,7 @@ namespace ms {
             if(!(speedSetting== "quick" || speedSetting == "standard")) {
                 throw "This speed setting is not allowed! Use either \"quick\" or \"standard\"";
             }
+            if(licenseType != "None") throw "No driver's license is required for this vehicle!";
         }
 
         const std::string getSpeedSetting() {

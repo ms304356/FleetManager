@@ -14,18 +14,19 @@ typedef std::vector<std::vector<std::string>> FleetData;
 
 std::shared_ptr<ms::Car> convertDataToCar(std::vector<std::string> input) {
     if(input[0] == "Taxi") {
-        return std::make_shared<ms::Taxi>(input[2], input[3], input[4], input[5], input[6], std::make_shared<ms::Driver>(input[8], input[9], std::make_shared<ms::Pesel>(input[7]), input[10]), input[1]);
+        return std::make_shared<ms::Taxi>(input[2], input[3], input[4], input[5], input[6], std::make_shared<ms::Driver>(input[8], input[9], input[7], input[10]), input[1]);
     } else if(input[0] == "Van") {
-        return  std::make_shared<ms::Van>(input[2], input[3], input[4], input[5], input[6], std::make_shared<ms::Driver>(input[8], input[9], std::make_shared<ms::Pesel>(input[7]), input[10]), stoi(input[1]));
+        return  std::make_shared<ms::Van>(input[2], input[3], input[4], input[5], input[6], std::make_shared<ms::Driver>(input[8], input[9], input[7], input[10]), stoi(input[1]));
     } else if(input[0] == "Limo") {
-        return  std::make_shared<ms::Limo>(input[2], input[3], input[4], input[5], input[6], std::make_shared<ms::Driver>(input[8], input[9], std::make_shared<ms::Pesel>(input[7]), input[10]), stod(input[1]));
+        return  std::make_shared<ms::Limo>(input[2], input[3], input[4], input[5], input[6], std::make_shared<ms::Driver>(input[8], input[9], input[7], input[10]), stod(input[1]));
     } else if(input[0] == "SDTaxi") {
         return  std::make_shared<ms::SDTaxi>(input[2], input[3], input[4], input[5], input[6], nullptr, input[1]);
     } else { throw "Error, cannot generate car object. Wrong input."; }
 }
 
 
-FleetData readFleetDataFromFile(std::ifstream file) {
+FleetData readFleetDataFromFile(std::string fileName) {
+    std::ifstream file(fileName);
     std::string ReadLine;
     std::vector<std::vector<std::string>> ReadFile;
 
@@ -46,10 +47,12 @@ FleetData readFleetDataFromFile(std::ifstream file) {
         ReadRow.push_back(temp);
         ReadFile.push_back(ReadRow);
     }
+    file.close();
     return ReadFile;
 }
 
-void writeFleetDataToFile(std::ofstream file, FleetData fleetData) {
+void writeFleetDataToFile(std::string fileName, FleetData fleetData) {
+    std::ofstream file(fileName);
     for(auto car: fleetData) {
         for(int i = 0; i < car.size(); i++){
             file << car[i];
@@ -57,6 +60,7 @@ void writeFleetDataToFile(std::ofstream file, FleetData fleetData) {
         }
         file<<"\n";
     }
+    file.close();
 }
 
 Fleet convertFleetDataToFleet(FleetData fleetData) {

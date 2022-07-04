@@ -23,8 +23,9 @@ namespace ms {
         }
         virtual std::vector<std::string> getCarData() const {
             std::vector<std::string> carData = Car::getCarData();
-            carData.push_back("Limo");
-            carData.push_back(std::to_string(length));
+            carData.insert(carData.begin(), std::to_string(length));
+            carData.insert(carData.begin(), "Limo");
+
             return carData;
         }
 

@@ -8,25 +8,21 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Pesel.h"
 #include "Person.h"
-#include <vector>
 
 namespace ms {
 
     class Driver : public ms::Person {
-        std::vector<std::string> licenseTypes;
+        std::string licenseType;
     public:
-        Driver(const std::string &firstName, const std::string &lastName, const ms::Pesel &pesel, const std::vector<std::string>& licenseTypes) :
-            Person(firstName, lastName, pesel){
-                Driver::licenseTypes = licenseTypes;
+        Driver(const std::string &firstName, const std::string &lastName, const std::shared_ptr<ms::Pesel> &pesel, const std::string& licenseType) :
+            Person(firstName, lastName, pesel), licenseType(licenseType){
+
         }
 
 
         bool checkLicenseType(const std::string licenseType) const {
-            for(auto item: licenseTypes){
-                if (item == licenseType) return true;
-            }
+            if (Driver::licenseType == licenseType) return true;
             return false;
         }
 
@@ -36,7 +32,7 @@ namespace ms {
             driverData.push_back(Driver::getPesel());
             driverData.push_back(Driver::getFirstName());
             driverData.push_back(Driver::getLastName());
-            driverData.insert(driverData.end(), licenseTypes.begin(), licenseTypes.end());
+            driverData.push_back(licenseType);
             return driverData;
         }
     };

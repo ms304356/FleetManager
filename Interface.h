@@ -3,10 +3,11 @@
 //
 #ifndef FLEETMANAGER_INTERFACE_H
 #define FLEETMANAGER_INTERFACE_H
+#include <string>
 
+static std::string drawList(std::vector<std::vector<std::string>> list);
 
-std::string carList(const std::vector<std::shared_ptr<ms::Car>> list);
-
+static std::string mainMenu();
 
 
 

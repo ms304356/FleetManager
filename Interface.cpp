@@ -8,19 +8,28 @@
 #include <vector>
 #include <string>
 
-#include "Car.h"
 
 
-std::string carList(const std::vector<std::shared_ptr<ms::Car>> list) {
+std::string mainMenu() {
+    std::cout<<"Welcome to the FleetManager!\n";
+    std::cout<<"This program allows your Taxi company to manage your fleet of cars.";
+    std::cout<<"You navigate by using text commands. Use \"list\" to show the list of currently added cars, \"remove\" ";
+}
+
+std::string drawList(std::vector<std::vector<std::string>> list) {
     std::string output;
      for (auto item : list ) {
-         for( int i = 0; i < item->getCarData().size(); i++){
-             output += item->getCarData()[i];
-             if (i != item->getCarData().size()) output += " | ";
+         for( int i = 0; i < item.size(); i++){
+             output += i + ". ";
+             output += item[i];
+             if (i != item.size()-1) output += " | ";
          }
-         std::cout << std::endl;
+         output += "\n";
      }
-    return "";
+    return output;
 }
+
+
+
 
 

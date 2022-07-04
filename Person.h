@@ -13,9 +13,9 @@ namespace ms {
     class Person {
         std::string firstName;
         std::string lastName;
-        ms::Pesel pesel;
+        std::shared_ptr<ms::Pesel> pesel;
     public:
-        Person(const std::string& firstName, const std::string& lastName, const ms::Pesel& pesel):
+        Person(const std::string& firstName, const std::string& lastName, const std::shared_ptr<ms::Pesel> pesel):
         firstName(firstName), lastName(lastName), pesel(pesel) {
 
         }
@@ -30,13 +30,13 @@ namespace ms {
             return firstName + " " + lastName;
         }
         std::string getPesel() const {
-            return pesel.getPesel();
+            return pesel->getPesel();
         }
         std::vector<std::string> getPersonData() const {
             std::vector<std::string> personData;
             personData.push_back(firstName);
             personData.push_back(lastName);
-            personData.push_back(pesel.getPesel());
+            personData.push_back(pesel->getPesel());
             return personData;
         }
     };

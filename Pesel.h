@@ -10,26 +10,10 @@
 
 namespace ms {
 
-    class Pesel {
+     class Pesel {
         std::string pesel;
-
         const static uint8_t w[];
-
-        static bool isAProperMonth(int month) {
-            if (month <= 12 && month >= 1) {
-                return true;
-            }
-            return false;
-        }
-        int returnCentury(int month) {
-            if (isAProperMonth(month)) return 1900;
-            if (isAProperMonth(month-20)) return 2000;
-            if (isAProperMonth(month-40)) return 2100;
-            if (isAProperMonth(month-60)) return 2200;
-            if (isAProperMonth(month-80)) return 1800;
-            return 0;
-        }
-        std::string wrong_pesel_exception = "\nIncorrect pesel.\n";
+        const std::string wrong_pesel_exception = "\nIncorrect pesel.\n";
     public:
 
         Pesel(const std::string& pesel) : pesel(pesel) {
@@ -45,7 +29,7 @@ namespace ms {
             if (sum % 10) throw wrong_pesel_exception;
 
         }
-        std::string getPesel() const {
+         std::string getPesel() const {
             return pesel;
         }
     };

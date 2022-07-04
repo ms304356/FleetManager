@@ -1,7 +1,3 @@
-//
-// Created by Mykyta Shemechko on 03/07/2022.
-//
-
 #ifndef FLEETMANAGER_VAN_H
 #define FLEETMANAGER_VAN_H
 
@@ -10,6 +6,9 @@
 
 
 namespace ms {
+/**
+ * Klasa furgonetki
+ */
     class Van : public ms::Car {
         int capacity;
     public:

@@ -1,7 +1,3 @@
-//
-// Created by Mykyta Shemechko on 03/07/2022.
-//
-
 #ifndef FLEETMANAGER_TAXI_H
 #define FLEETMANAGER_TAXI_H
 
@@ -10,6 +6,9 @@
 
 
 namespace ms {
+/**
+ * Klasa taxi
+ */
     class Taxi : public ms::Car {
         std::string luxClass;
     public:

@@ -1,7 +1,3 @@
-//
-// Created by Mykyta Shemechko on 02/07/2022.
-//
-
 #ifndef FLEETMANAGER_DRIVER_H
 #define FLEETMANAGER_DRIVER_H
 
@@ -11,7 +7,9 @@
 #include "Person.h"
 
 namespace ms {
-
+/**
+ * Klasa Kierowcy
+ */
     class Driver : public ms::Person {
         std::string licenseType;
     public:

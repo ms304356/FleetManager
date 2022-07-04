@@ -1,7 +1,3 @@
-//
-// Created by Mykyta Shemechko on 02/07/2022.
-//
-
 #ifndef FLEETMANAGER_PERSON_H
 #define FLEETMANAGER_PERSON_H
 
@@ -9,6 +5,9 @@
 #include <string>
 
 namespace ms {
+/**
+ * Klasa osoby
+ */
     class Person {
         std::string firstName;
         std::string lastName;
@@ -18,6 +17,9 @@ namespace ms {
     public:
         Person(const std::string& firstName, const std::string& lastName, const std::string pesel):
         firstName(firstName), lastName(lastName), pesel(pesel) {
+            /**
+              * Sprawdzane warunki pesel
+              */
             if (pesel.length() != 11) throw wrong_pesel_exception;
             for (const auto c : pesel) {
                 if (c < '0' || c > '9') throw wrong_pesel_exception;

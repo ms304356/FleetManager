@@ -1,7 +1,3 @@
-//
-// Created by Mykyta Shemechko on 03/07/2022.
-//
-
 #ifndef FLEETMANAGER_LIMO_H
 #define FLEETMANAGER_LIMO_H
 
@@ -9,6 +5,9 @@
 
 
 namespace ms {
+/**
+ * Klasa limuzyny
+ */
     class Limo : public ms::Car {
         double length;
     public:

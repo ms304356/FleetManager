@@ -1,6 +1,3 @@
-//
-// Created by Mykyta Shemechko on 04/07/2022.
-//
 #include "Car.h"
 #include "Taxi.h"
 #include "Van.h"

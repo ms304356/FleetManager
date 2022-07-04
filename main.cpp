@@ -1,9 +1,8 @@
+/**
+ * @file FleetManager
+ * @authors Mykyta Shemechko
+ */
 #include <iostream>
-#include <fstream>
-//#include "Taxi.h"
-//#include "Van.h"
-//#include "Limo.h"
-//#include "SDTaxi.h"
 #include "Interface.h"
 #include "FleetOperations.h"
 

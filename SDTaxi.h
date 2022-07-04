@@ -1,7 +1,3 @@
-//
-// Created by Mykyta Shemechko on 03/07/2022.
-//
-
 #ifndef FLEETMANAGER_SDTAXI_H
 #define FLEETMANAGER_SDTAXI_H
 
@@ -10,6 +6,9 @@
 
 
 namespace ms {
+/**
+ * Klasa taxi prowadzących siebie
+ */
     class SDTaxi : public ms::Car {
         std::string speedSetting;
     public:

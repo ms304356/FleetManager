@@ -1,8 +1,3 @@
-//
-// Created by Mykyta Shemechko on 02/07/2022.
-//
-
-
 #ifndef FLEETMANAGER_CAR_H
 #define FLEETMANAGER_CAR_H
 
@@ -11,7 +6,9 @@
 #include "Driver.h"
 #include <memory>
 namespace ms {
-
+/**
+ * Klasa ogólna samochodów
+ */
     class Car {
         std::string licensePlate;
         std::string licenseType;
